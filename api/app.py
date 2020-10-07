@@ -7,11 +7,12 @@ from flask_cors import CORS, cross_origin
 import os
 
 app = Flask(__name__)
+blueprint = Blueprint('api', __name__, url_prefix='/api/')
 app.wsgi_app = ProxyFix(app.wsgi_app)
-api = Api(app, version='1.0', title='API do Campeonato Brasileiro',
+api = Api(blueprint, doc='/', version='1.0', title='API do Campeonato Brasileiro',
     description="Uma API para o acompanhamento do Campeonato Brasileiro\n\nDesenvolvido por: Fábio Vitor \n\nGithub: https://github.com/FVitor7\nemail: fabvitor2010@gmail.com")
         
-
+app.register_blueprint(blueprint)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 cors = CORS(app)
