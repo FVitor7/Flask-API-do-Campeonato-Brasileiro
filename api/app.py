@@ -3,11 +3,18 @@ from flask_restx import Api, Resource, fields
 from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
 from bs4 import BeautifulSoup
+from flask_cors import CORS, cross_origin
+import os
 
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(app, version='1.0', title='API do Campeonato Brasileiro',
     description="Uma API para o acompanhamento do Campeonato Brasileiro\n\nDesenvolvido por: Fábio Vitor \n\nGithub: https://github.com/FVitor7\nemail: fabvitor2010@gmail.com")
+        
+
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+cors = CORS(app)
 
 ns = api.namespace("times", description="API  operations")
 
@@ -78,7 +85,7 @@ for x in range(20):
       API.create(api_brasileirao)
   
 
-
+@cross_origin()
 @ns.route('/')
 class ApiList(Resource):
     @ns.doc('list_teams')
@@ -87,7 +94,7 @@ class ApiList(Resource):
         
         return API.teams
     
-
+@cross_origin()
 @ns.route('/<int:id>')
 @ns.response(404, 'Time nao encontrado.')
 @ns.param('id', 'Necessario para localizar a equipe')
@@ -102,7 +109,8 @@ class ApiGet(Resource):
     
 
 if __name__ == '__main__':
+    #app.run(debug=True)
     # Bind to PORT if defined, otherwise default to 5000.
     port = float(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    #app.run()
+     #app.run()
