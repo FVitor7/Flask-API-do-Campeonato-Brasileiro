@@ -1,4 +1,4 @@
-url = 'https://campbrapi.herokuapp.com/times/'
+url = 'https://campbrapi.herokuapp.com/api/times/'
 $.getJSON(url, function(result) {
   // result é o json obtido
   $(document).ready(function() {
