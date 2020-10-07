@@ -25,6 +25,7 @@ team = api.model('API', {
     "pontos": fields.String(required=True, description='Quantidade de pontos obtidos'),
     "jogos": fields.String(required=True, description='Quantidade de partidas disputadas'),
     "vitorias": fields.String(required=True, description='Número de vitórias'),
+    "empates": fields.String(required=True, description='Número de empates'),
     "derrotas": fields.String(required=True, description='Número de derrotas'),
     "gols_pro": fields.String(required=True, description='Gols Marcados'),
     "gols_sofridos": fields.String(required=True, description='Gols sofridos'),
