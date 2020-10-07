@@ -99,7 +99,7 @@ class ApiList(Resource):
         return API.teams
     
 @cross_origin()
-@ns.route('/<int:id>')
+@ns.route('/<int:id>/')
 @ns.response(404, 'Time nao encontrado.')
 @ns.param('id', 'Necessario para localizar a equipe')
 class ApiGet(Resource):
