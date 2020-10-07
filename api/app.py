@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, Blueprint
 from flask_restx import Api, Resource, fields
 from werkzeug.middleware.proxy_fix import ProxyFix
 import requests
@@ -7,7 +7,9 @@ from flask_cors import CORS, cross_origin
 import os
 
 app = Flask(__name__)
+
 blueprint = Blueprint('api', __name__, url_prefix='/api/')
+
 app.wsgi_app = ProxyFix(app.wsgi_app)
 api = Api(blueprint, doc='/', version='1.0', title='API do Campeonato Brasileiro',
     description="Uma API para o acompanhamento do Campeonato Brasileiro\n\nDesenvolvido por: Fábio Vitor \n\nGithub: https://github.com/FVitor7\nemail: fabvitor2010@gmail.com")
@@ -88,7 +90,7 @@ for x in range(20):
   
 
 @cross_origin()
-@ns.route('/v1/')
+@ns.route('/')
 class ApiList(Resource):
     @ns.doc('list_teams')
     @ns.marshal_list_with(team)
