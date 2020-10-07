@@ -1,4 +1,4 @@
-# API-do-Campeonato-Brasileiro
+# API do Campeonato Brasileiro
 Uma api com a tabela de classificação e dados das equipes do Brasileirão
 
 Site Front-end
