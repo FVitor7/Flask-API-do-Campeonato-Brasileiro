@@ -88,7 +88,7 @@ for x in range(20):
   
 
 @cross_origin()
-@ns.route('/')
+@ns.route('/v1/')
 class ApiList(Resource):
     @ns.doc('list_teams')
     @ns.marshal_list_with(team)
