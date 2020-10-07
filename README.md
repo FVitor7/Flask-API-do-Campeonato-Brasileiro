@@ -14,3 +14,6 @@ https://campbrapi.herokuapp.com/api/times/
 
 Obtendo o Json de um time específico, exemplo: o 4° lugar na tabela:
 https://campbrapi.herokuapp.com/api/times/4/
+
+
+Dados da API obtidos do site: https://www.cbf.com.br/futebol-brasileiro/competicoes/campeonato-brasileiro-serie-a/2020
