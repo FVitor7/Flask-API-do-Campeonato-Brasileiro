@@ -1,6 +1,8 @@
 # API do Campeonato Brasileiro
 Uma api com a tabela de classificação e dados das equipes do Brasileirão
 
+Neste projeto você encontrará a estrutura backend de uma API e a manipulação da mesma no front-end.
+
 Site Front-end
 https://campbrapi.herokuapp.com/
 
