@@ -11,4 +11,4 @@ Json com dados dos times:
 https://campbrapi.herokuapp.com/api/times/
 
 Obtendo o Json de um time específico, exemplo: o 4° lugar na tabela:
-https://campbrapi.herokuapp.com/api/times/4
+https://campbrapi.herokuapp.com/api/times/4/
