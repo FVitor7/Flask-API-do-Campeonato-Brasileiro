@@ -107,7 +107,10 @@ class ApiGet(Resource):
         
         return API.get(id)
 
-    
+@app.route("/")
+def beta():
+        return render_template("index.html")
+
 
 if __name__ == '__main__':
     #app.run(debug=True)
